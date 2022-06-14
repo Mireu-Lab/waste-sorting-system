@@ -1,0 +1,13 @@
+{
+    "admin" : {
+        "user" : "test",
+        "password" : 1234
+    },
+    
+    "device" : {
+        "id" : 1,
+        "local" : "jeju",
+        "zone" : "Asia/Seoul",
+        "version" : 1
+    }
+}
