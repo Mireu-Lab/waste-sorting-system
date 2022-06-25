@@ -1,34 +1,20 @@
 from ecocycling import qr
 
-from flask import Flask, request, render_template, url_for, redirect, jsonify
+from flask import Flask, request, render_template, redirect, jsonify
+
 app = Flask(__name__)
-
-import json
-
-with open("Data/Set.json", "r") as setdata:
-    set_data = json.load(setdata)
-
-deviceid = set_data["device"]["id"]
-devicelocal = set_data["device"]["local"]
 
 @app.route('/', methods=["GET"])
 def qr_web():
-    if request.method == "GET":
-        if request.remote_addr == '127.0.0.1':
-            return render_template('main.html')
-        else:
-            return redirect('http://hana.mireu.xyz')
+    return render_template('index.html')
 
-@app.route('/singin', methods=["POST", "GET"])
-def singin():
-    if request.method == "POST":
-        input_data = request.get_json()
-        print(input_data["userid"], input_data["username"], input_data["userimage"])
-        return input_data["username"], input_data["userimage"]
-    else:
-        return redirect('http://hana.mireu.xyz')
-
-
+@app.route('/signin', methods=["GET"])
+def signin_web():
+    name = request.args.get("username")
+    image = request.args.get("userimage")
+    print(name, image)
+    
+    return render_template('signin.html', username=name, userimage=image)
 
 if __name__ == '__main__':
     qr.add()
