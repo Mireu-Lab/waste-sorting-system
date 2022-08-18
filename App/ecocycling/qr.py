@@ -2,9 +2,10 @@ from datetime import datetime
 from pytz import timezone
 
 import qrcode
-import requests
+import json
 
-device_ip = requests.get("http://ip.jsontest.com").json()["ip"]
+device_info = open("Data/Set.json", "r")
+token = json.load(device_info)["token"]
 
 qr = qrcode.QRCode(
     version=4,
@@ -14,7 +15,7 @@ qr = qrcode.QRCode(
 )
 
 def add():    
-    qr.add_data([device_ip])
+    qr.add_data(token)
     qr.make(fit=True)
     qr_img = qr.make_image(fill_color="black", back_color="white")
     qr_img.save(f"App/static/main.png")

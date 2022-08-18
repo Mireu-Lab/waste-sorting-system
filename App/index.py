@@ -2,7 +2,6 @@ from flask import Flask, request, render_template, redirect, jsonify
 from flask_cors import CORS
 
 from time import sleep
-import asyncio
 
 api = Flask(__name__)
 CORS(api)
@@ -15,7 +14,7 @@ userimage = None
 def main_web():
     return redirect("http://www.mireu.xyz")
 
-@api.route("/signin/input", methods=["POST"])
+@api.route("/signin/input", methods=["POST    global userid, username, userimage"])
 def signin_input():
     global userid, username, userimage
     input_data = request.get_json()
@@ -32,4 +31,4 @@ def signin_upload():
     return jsonify([username, userimage])
 
 if __name__ == '__main__':
-    api.run(host="0.0.0.0", port="8080", debug=True)
+    api.run(host="0.0.0.0", port="18099", debug=True)
