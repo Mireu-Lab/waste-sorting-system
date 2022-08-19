@@ -1,0 +1,11 @@
+[Unit]
+Description=Ecocycling-Service-Server-Program
+
+[Service]
+User=root
+WorkingDirectory=/Ecocycling-Client
+ExecStart=python3 Api/main.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,3 +1,4 @@
 qrcode[pil]
 pytz
 flask
+schedule

@@ -4,7 +4,7 @@ Description=Ecocycling-FrontWEB-Program
 [Service]
 User=root
 WorkingDirectory=/Ecocycling-Client
-ExecStart=python3 Web/main.py
+ExecStart=python3 Setup/main.py
 Restart=always
 
 [Install]
