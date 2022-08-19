@@ -1,5 +1,11 @@
 {
-    "id" : 1,
-    "token" : null,
-    "version" : 1
+    "device": {
+        "id": 1,
+        "ip": null,
+        "token": null,
+        "version": null
+    },
+    "ai": {
+        "version": null
+    }
 }
