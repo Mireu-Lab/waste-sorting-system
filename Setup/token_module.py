@@ -1,4 +1,4 @@
-import setup
+import setup_module as setup_module
 import requests
 import json
 
@@ -17,12 +17,13 @@ def token_setup():
         'version': info["device"]["version"],
     }
 
-    response = requests.post('http://127.0.0.1:8080/iot/registration', headers=headers, json=json_data).json()
+    response = requests.post('http://api.ecocycling.none-labs.xyz:8080/iot/registration', headers=headers, json=json_data).json()
     
     if response["Code"] == 200:
-        setup.system_info_update(response["token"])
+        setup_module.system_info_update(response["token"])
+        return "Token Creation processing complete"
     else:
-        pass
+        return "Token Creation processing failed"
 
 def token_update():
     device_info = open("Data/Set.json", "r")
@@ -39,9 +40,10 @@ def token_update():
         'version': info["device"]["version"],
     }
 
-    response = requests.post(f'http://127.0.0.1:8080/iot/update/{info["device"]["token"]}', headers=headers, json=json_data).json()
+    response = requests.post(f'http://api.ecocycling.none-labs.xyz:8080/iot/update/{info["device"]["token"]}', headers=headers, json=json_data).json()
     
     if response["Code"] == 200:
-        setup.system_info_update(response["token"])
+        setup_module.system_info_update(response["token"])
+        return "Token Creation processing complete"
     else:
-        pass
+        return "Token Creation processing failed"
