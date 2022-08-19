@@ -1,12 +1,17 @@
 from ecocycling import qr
 
 from flask import Flask, request, render_template, redirect, jsonify
+import webbrowser
 
 app = Flask(__name__)
 
 @app.route('/', methods=["GET"])
 def qr_web():
     return render_template('login.html')
+
+@app.route('/error', methods=["GET"])
+def error_web():
+    return render_template('error.html')
 
 @app.route('/userinfo', methods=["GET"])
 def signin_web():
@@ -17,3 +22,4 @@ def signin_web():
 if __name__ == '__main__':
     qr.add()
     app.run(host="0.0.0.0", port="80", debug=True)
+    webbrowser.open("http://127.0.0.1/")
