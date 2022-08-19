@@ -30,6 +30,11 @@ def signin_upload():
     global userid, username, userimage
     return jsonify([username, userimage])
 
+@api.route("/device/error/<code>", methods=["GET"])
+def device_error(code):
+    return jsonify([code])
+
+
 if __name__ == '__main__':
     api.run(host="0.0.0.0", port="18099", debug=True)
 
