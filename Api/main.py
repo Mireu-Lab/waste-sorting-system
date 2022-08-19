@@ -14,7 +14,7 @@ userimage = None
 def main_web():
     return redirect("http://www.mireu.xyz")
 
-@api.route("/signin/input", methods=["POST    global userid, username, userimage"])
+@api.route("/signin/input", methods=["POST"])
 def signin_input():
     global userid, username, userimage
     input_data = request.get_json()
@@ -32,3 +32,4 @@ def signin_upload():
 
 if __name__ == '__main__':
     api.run(host="0.0.0.0", port="18099", debug=True)
+

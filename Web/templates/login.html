@@ -8,14 +8,14 @@
     <title>Document</title>
     <script>
         setInterval(function(){$.ajax({
-                url: 'http://localhost:8080/user_login',
-                type: 'POST',
+                url: 'http://localhost:18099/signin/upload',
+                type: 'GET',
                 
                 success: function(response){
                     var name = response[0]
                     var image = response[1]
                     if(name != null){ 
-                      let url = `http://127.0.0.1/signin?username=${name}&userimage=${image}`
+                      let url = `http://127.0.0.1/userinfo?username=${name}&userimage=${image}`
                       location.replace(url)
                     }
                 },
@@ -23,14 +23,14 @@
                     console.log(error);
                 }
             })
-        }, 2000)
+        }, 1000)
     </script>
 </head>
 
 <body>
     <div class="v201_192">
         <div class="v201_190"></div>
-        <span class="v201_5">123123123</span>
+        <span class="v201_5">Ecocycling Device Login</span>
     </div>
 </body>
 

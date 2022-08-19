@@ -15,9 +15,9 @@ qr = qrcode.QRCode(
 )
 
 def add():    
-    qr.add_data(token)
+    qr.add_data([token])
     qr.make(fit=True)
     qr_img = qr.make_image(fill_color="black", back_color="white")
-    qr_img.save(f"App/static/main.png")
+    qr_img.save(f"Web/static/main.png")
     
     print("QR CODR ADD CLRAR")
