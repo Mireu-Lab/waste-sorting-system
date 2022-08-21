@@ -20,5 +20,6 @@ sudo systemctl start FrontWeb_service
 sudo systemctl start serviceAPI_service
 
 figlet Ecocycling
-echo \n\n
+echo
+echo
 echo System Setup Done!

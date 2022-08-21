@@ -1,5 +1,5 @@
 [Unit]
-Description=Ecocycling-FrontWEB-Program
+Description=Ecocycling-Device-Setup-Program
 
 [Service]
 User=root
