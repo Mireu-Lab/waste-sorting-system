@@ -28,9 +28,9 @@ def system_info_update(token=None, service_version=None, ai_version=None):
         device_info["device"]["token"] = token
     
     if service_version != None:
-        device_info["device"]["version"] = ai_version
+        device_info["version"]["service"] = ai_version
 
     if ai_version != None:
-        device_info["ai"]["version"] = ai_version
+        device_info["version"]["ai"] = ai_version
 
     json.dump(device_info, device_info)

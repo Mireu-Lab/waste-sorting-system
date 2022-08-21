@@ -14,7 +14,7 @@ def token_setup():
     json_data = {
         'device_id': info["device"]["id"],
         'ip': info["device"]["ip"],
-        'version': info["device"]["version"],
+        'version': info["version"]["service"],
     }
 
     response = requests.post('http://api.ecocycling.none-labs.xyz/iot/registration', headers=headers, json=json_data).json()
@@ -37,7 +37,7 @@ def token_update():
     json_data = {
         'device_id': info["device"]["id"],
         'ip': info["device"]["ip"],
-        'version': info["device"]["version"],
+        'version': info["version"]["service"],
     }
 
     response = requests.post(f'http://api.ecocycling.none-labs.xyz/iot/update/{info["device"]["token"]}', headers=headers, json=json_data).json()
