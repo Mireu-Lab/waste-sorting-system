@@ -4,10 +4,11 @@ import json
 def system_setup():
     device_info = open("Data/Set.json", "w")
     setup_json = {
+        "token" : None,
+
         "device" : {
             "id" : 1,
             "ip" : requests.get("http://ip.jsontest.com").json()["ip"],
-            "token" : None,
         },
 
         "version" : {
@@ -27,7 +28,7 @@ def system_info_update(token=None, service_version=None, ai_version=None):
         device_info_json["device"]["ip"] = requests.get("http://ip.jsontest.com").json()["ip"]
     
     if token != None:
-        device_info_json["device"]["token"] = token
+        device_info_json["token"] = token
     
     if service_version != None:
         device_info_json["version"]["service"] = ai_version

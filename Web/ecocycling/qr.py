@@ -1,11 +1,8 @@
-from datetime import datetime
-from pytz import timezone
-
 import qrcode
 import json
 
 device_info = open("Data/Set.json", "r")
-token = json.load(device_info)["device"]["token"]
+token = json.load(device_info)["token"]
 
 qr = qrcode.QRCode(
     version=4,

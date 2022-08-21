@@ -40,7 +40,7 @@ def token_update():
         'version': info["version"]["service"],
     }
 
-    response = requests.post(f'http://api.ecocycling.none-labs.xyz/iot/update/{info["device"]["token"]}', headers=headers, json=json_data).json()
+    response = requests.post(f'http://api.ecocycling.none-labs.xyz/iot/update/{info["token"]}', headers=headers, json=json_data).json()
     
     if response["Code"] == 200:
         setup_module.system_info_update(response["Token"])

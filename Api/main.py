@@ -12,7 +12,7 @@ userimage = None
 
 @api.route("/")
 def main_web():
-    return redirect("http://www.mireu.xyz")
+    return redirect("http://ecocycling.none-labs.xyz")
 
 @api.route("/signin/input", methods=["POST"])
 def signin_input():
