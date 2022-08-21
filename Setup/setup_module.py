@@ -1,5 +1,3 @@
-import version
-
 import requests
 import json
 
