@@ -1,3 +1,5 @@
+from version import __version__
+
 import requests
 import json
 
@@ -8,7 +10,7 @@ def system_setup():
             "id" : 1,
             "ip" : requests.get("http://ip.jsontest.com").json()["ip"],
             "token" : None,
-            "version" : None
+            "version" : __version__
         },
 
         "ai" : {
