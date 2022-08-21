@@ -22,7 +22,7 @@ def system_setup():
 def system_info_update(token=None, service_version=None, ai_version=None):
     device_info_json = json.load(open("Data/Set.json", "r"))
 
-    save_json = open("Data/Set.json", "a")
+    save_json = open("Data/Set.json", "w")
 
     if requests.get("http://ip.jsontest.com").json()["ip"] != device_info_json["device"]["ip"]:
         device_info_json["device"]["ip"] = requests.get("http://ip.jsontest.com").json()["ip"]
