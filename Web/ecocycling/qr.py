@@ -5,7 +5,7 @@ import qrcode
 import json
 
 device_info = open("Data/Set.json", "r")
-token = json.load(device_info)["token"]
+token = json.load(device_info)["device"]["token"]
 
 qr = qrcode.QRCode(
     version=4,
