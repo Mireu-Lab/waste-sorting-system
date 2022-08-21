@@ -39,7 +39,7 @@ def service_restart():
     os.system("sudo systemctl restart FrontWeb_service")
 
 # 정기 점검 스케줄
-schedule.every().day.at("04:10").do(service_run)
+schedule.every().day.at("04:10").do(service_error)
 schedule.every().day.at("04:15").do(token_updates)
 schedule.every().day.at("04:30").do(service_restart)
 schedule.every().day.at("04:30").do(service_run)
