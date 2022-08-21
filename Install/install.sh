@@ -11,13 +11,10 @@ sudo cp Install/Service/Setup_service.service /etc/systemd/system/
 sudo systemctl daemon-reload
 
 sudo systemctl enable Setup_service
-sudo systemctl start Setup_service
-
-sleep 1m
-
 sudo systemctl enable FrontWeb_service
 sudo systemctl enable serviceAPI_service
 
+sudo systemctl start Setup_service
 sudo systemctl start FrontWeb_service
 sudo systemctl start serviceAPI_service
 
