@@ -17,7 +17,7 @@ def token_setup():
         'version': info["device"]["version"],
     }
 
-    response = requests.post('http://api.ecocycling.none-labs.xyz:8080/iot/registration', headers=headers, json=json_data).json()
+    response = requests.post('http://api.ecocycling.none-labs.xyz/iot/registration', headers=headers, json=json_data).json()
     
     if response["Code"] == 200:
         setup_module.system_info_update(response["token"])
@@ -40,7 +40,7 @@ def token_update():
         'version': info["device"]["version"],
     }
 
-    response = requests.post(f'http://api.ecocycling.none-labs.xyz:8080/iot/update/{info["device"]["token"]}', headers=headers, json=json_data).json()
+    response = requests.post(f'http://api.ecocycling.none-labs.xyz/iot/update/{info["device"]["token"]}', headers=headers, json=json_data).json()
     
     if response["Code"] == 200:
         setup_module.system_info_update(response["token"])
