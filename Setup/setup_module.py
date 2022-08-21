@@ -10,17 +10,17 @@ def system_setup():
             "id" : 1,
             "ip" : requests.get("http://ip.jsontest.com").json()["ip"],
             "token" : None,
-            "version" : version.__version__
         },
 
-        "ai" : {
-            "version" : None
-        }
+        "version" : {
+            "service" : "0.0.1",
+            "ai" : None,
+        },
     }
     json.dump(setup_json, device_info, indent=4)
     return "Complete instrument basic setup"
 
-def system_info_update(token=None, ai_version=None):
+def system_info_update(token=None, service_version=None, ai_version=None):
     device_info = open("Data/Set.json", "a")
 
     if requests.get("http://ip.jsontest.com").json()["ip"] != device_info["device"]["ip"]:
@@ -29,6 +29,9 @@ def system_info_update(token=None, ai_version=None):
     if token != None:
         device_info["device"]["token"] = token
     
+    if service_version != None:
+        device_info["device"]["version"] = ai_version
+
     if ai_version != None:
         device_info["ai"]["version"] = ai_version
 
