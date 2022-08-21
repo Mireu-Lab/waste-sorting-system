@@ -16,20 +16,12 @@ def service_run():
     requests.get('http://localhost:18099/error/200')
 
 print(f"[{datetime.now()}] = Setup Program\n\n")
-
-print(f"[{datetime.now()}] = Setup Start Processing")
-print(f"[{datetime.now()}] = {system_setup()}")
-print(f"[{datetime.now()}] = {token_setup()}")
-print(f"[{datetime.now()}] = {ai_setup()}")
-print(f"[{datetime.now()}] = Setup Processing done\n\n")
-
-    
+   
 async def ai_updates():
     print(f"[{datetime.now()}] = Regular AI Updates Processing done / {ai_update()}")
 
 # AI 머신러닝 모델 업데이트 스케줄
 schedule.every(1).day.at("04:10").do(ai_updates)
-
 
 async def token_updates():
     print(f"[{datetime.now()}] = Regular Token Updates Processing done / {token_update()}")
