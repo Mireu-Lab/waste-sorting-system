@@ -2,4 +2,7 @@ qrcode[pil]
 pytz
 flask
 schedule
-flask_cors
+
+fastapi
+uvicorn[standard]
+BaseModel

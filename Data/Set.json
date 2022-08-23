@@ -1,12 +1,11 @@
 {
-    "token": null,
-
+    "token": "8a2610c349dd71c39107ce05e6d128825b3bcc027ae91a8de842f52c88d7dfba",
     "device": {
         "id": 1,
-        "ip": null
+        "ip": "49.163.22.79"
     },
     "version": {
-        "service": null,
+        "service": "0.0.1",
         "ai": null
     }
 }
